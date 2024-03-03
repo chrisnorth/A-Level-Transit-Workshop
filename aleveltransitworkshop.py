@@ -41,19 +41,19 @@ if section==1:
     # Define the question and options
     question1_1_1 = "What is the transit method used for?"
     st.write(question1_1_1)
-    options1_1_1 = ["A) Detecting exoplanets", "B) Detecting comets", "C) Studying asteroids", "D) Observing galaxies"]
+    options1_1_1 = ["Detecting exoplanets", "Detecting comets", "Studying asteroids", "Observing galaxies"]
     st.write(options1_1_1)
     # Display the question and options
-    selected_option = st.text_input("Type the capital letter corresponding to your solution:")
+    selected_option = st.text_input("Type the number (0-3) corresponding to your solution:")
     # Check the selected option
-    if selected_option == "A":
+    if selected_option == "0":
         st.write("Correct! The transit method is used for detecting exoplanets. Mission One complete!")
     else:
         # Provide a hint
-        if selected_option == "B":
+        if selected_option == "1":
             st.write("Try again! Re-read the Mission One details.")
-        elif selected_option == "C":
+        elif selected_option == "2":
             st.write("Try again! Re-read the Mission One details.")
-        elif selected_option == "D":
+        elif selected_option == "3":
             st.write("Try again! Re-read the Mission One details.")
 

@@ -16,3 +16,5 @@ st.title('GCSE Transit Plan')
 st.markdown("# Level One: Uncovering The Transit Method")
 st.sidebar.markdown("# Level One")
 
+# Define section titles
+sectiontitles = ['Mission One', 'Mission Two']

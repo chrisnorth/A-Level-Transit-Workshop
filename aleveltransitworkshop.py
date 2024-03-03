@@ -42,7 +42,7 @@ if section==1:
     question1_1_1 = "What is the transit method used for?"
     options1_1_1 = ["Detecting exoplanets", "Detecting comets", "Studying asteroids", "Observing galaxies"]
     # Display the question and options
-    selected_option = st.radio(question1_1_1, options1_1_1)
+    selected_option = st.selectbox(question1_1_1, options1_1_1)
     # Check the selected option
     if selected_option == "Detecting exoplanets":
         st.write("Correct! The transit method is used for detecting exoplanets. Mission One complete!")

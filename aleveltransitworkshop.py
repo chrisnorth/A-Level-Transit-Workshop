@@ -18,3 +18,8 @@ st.sidebar.markdown("# Level One")
 
 # Define section titles
 sectiontitles = ['Mission One', 'Mission Two']
+
+# Define section titles
+def sectiontitle(number):
+    return "{0}: {1}".format(number, sectiontitles[number-1])
+

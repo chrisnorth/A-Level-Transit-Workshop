@@ -10,7 +10,7 @@ from matplotlib.backends.backend_agg import RendererAgg
 _lock = RendererAgg.lock
 
 # Title the app
-st.title('GCSE Transit Plan')
+st.title('A-Level Transit Method: The Transit Trail!')
 
 # adding pages
 st.markdown("# Level One: Uncovering The Transit Method")
@@ -28,3 +28,9 @@ section = st.radio('Select mission:', [1,2], format_func=sectiontitle)
 
 # Write section headers
 st.markdown("## {}".format(sectiontitle(section)))
+
+if section==1:
+    # Add text
+    st.write("Level One: clear, smooth terrain with 10% chance of rain!")
+    st.write("The transit method is a way astronomers detect exoplanets, which are planets outside of our solar system.")
+    

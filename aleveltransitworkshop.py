@@ -50,7 +50,7 @@ if section==1:
         st.write("Correct! The transit method is used for detecting exoplanets. Mission One complete!")
     else:
         # Provide a hint
-        if selected_option == "B":
+        if selected_option == "B", "b":
             st.write("Try again! Re-read the Mission One details.")
         elif selected_option == "C":
             st.write("Try again! Re-read the Mission One details.")

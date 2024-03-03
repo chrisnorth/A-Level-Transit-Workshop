@@ -8,3 +8,8 @@ import time
 #mpl.use("agg")
 from matplotlib.backends.backend_agg import RendererAgg
 _lock = RendererAgg.lock
+
+# adding pages
+st.markdown("# Level One: Uncovering The Transit Method")
+st.sidebar.markdown("# Level One")
+

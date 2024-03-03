@@ -33,4 +33,13 @@ if section==1:
     # Add text
     st.write("Level One: clear, smooth terrain with 10% chance of rain!")
     st.write("The transit method is a way astronomers detect exoplanets, which are planets outside of our solar system.")
-    
+    import streamlit as st
+    # Add an image title
+    st.title('K2-18 b')
+    # Add an image from local file
+    st.image('C:\Users\elena\Pictures\Desktop background\Exoplanet_K2-18_b_(Illustration).jpg', caption='The above image is an illustration of an exoplanet Kb-18 b! The red sphere is the cool dwarf star that it orbits around called K2-18. Illustration: NASA, CSA, ESA, J. Olmsted (STScI), Science: N. Madhusudhan (Cambridge University)')
+
+    import streamlit as st
+
+    # Question 1
+    options_q1 = ["Detecting exoplanets", "Detecting comets", "Observing galaxies", "Rome"]

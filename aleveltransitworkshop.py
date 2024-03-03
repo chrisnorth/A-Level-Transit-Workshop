@@ -24,4 +24,7 @@ def sectiontitle(number):
     return "{0}: {1}".format(number, sectiontitles[number-1])
 
 # Define section
-section = st.radio('Select section:', [1,2], format_func=sectiontitle)
+section = st.radio('Select mission:', [1,2], format_func=sectiontitle)
+
+# Write section headers
+st.markdown("## {}".format(sectiontitle(section)))

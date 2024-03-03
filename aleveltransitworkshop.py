@@ -44,13 +44,13 @@ if section==1:
     options1_1_1 = ["A) Detecting exoplanets", "B) Detecting comets", "C) Studying asteroids", "D) Observing galaxies"]
     st.write(options1_1_1)
     # Display the question and options
-    selected_option = st.text_input("Type the letter corresponding to your solution:")
+    selected_option = st.text_input("Type the capital letter corresponding to your solution:")
     # Check the selected option
     if selected_option == "A":
         st.write("Correct! The transit method is used for detecting exoplanets. Mission One complete!")
     else:
         # Provide a hint
-        if selected_option == "B", "b":
+        if selected_option == "B":
             st.write("Try again! Re-read the Mission One details.")
         elif selected_option == "C":
             st.write("Try again! Re-read the Mission One details.")

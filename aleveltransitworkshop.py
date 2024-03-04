@@ -196,7 +196,7 @@ if section==2:
             st.write("Try again! Re-read the Mission Two details.")
     
     st.markdown('You have found an exoplanet!')
-    st.markdown('Congratulations, you have found an exoplanet! The transit method has been responsible for finding over 4000 exoplanets! But we're not done here! The transit method is very useful for finding many characterisitics of an exoplanet, including some that can even help find life!')
+    st.markdown('Congratulations, you have found an exoplanet! The transit method has been responsible for finding over 4000 exoplanets! But we are not done here! The transit method is very useful for finding many characterisitics of an exoplanet, including some that can even help find life!')
     
 if section==3:
     question1_1_1 = "What is the transit method used for?"

@@ -1,3 +1,5 @@
 streamlit==1.22.0
 matplotlib==3.7.1
 numpy==1.21.5
+pytransit==2.5.27
+scipy==1.11.13

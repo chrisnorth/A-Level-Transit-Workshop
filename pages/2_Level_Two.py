@@ -238,7 +238,7 @@ if section2==5:
     options2_1_1=["Change in the star's colour", "Variations in the star's size", "Repeated dips in the star's brightness at regular intervals", "Fluctuations in the star's temperature"]
     st.write(options2_1_1)
      # Display Question 1.2.1 and options
-    selected_option2_2_1 = st.text_input("Type the number (0-3) corresponding to your solution:")
+    selected_option2_2_1 = st.text_input("Type the number (0-3) corresponding to your solution:", key='q2_1_1')
     # Check the selected option
     if selected_option2_2_1 == "2":
         st.write("Correct! :)")

@@ -432,3 +432,23 @@ def page2():
             st.pyplot(lc132b)
             st.pyplot(lc18b)
             st.pyplot(lc116b)
+        t = np.linspace(0, 5, 1200)  #times at which to calculate light curve (days)
+
+        k = float(input(f"Enter a ratio of planet to star radius "))
+
+        #Hint: Keep your values between 0.1 and 1
+
+        # Plot the data
+        plt.figure(figsize=(8, 6))
+        lc_k  = tm.evaluate(k=k, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+        plt.plot(t,lc_k, '-o')
+
+        # Add labels and title
+        plt.ylabel('Relative signal')
+        plt.xlabel('Time (days)')
+        plt.title('Your transit light curve!')
+
+        # Show the plot
+        plt.minorticks_on();
+        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+        plt.show()

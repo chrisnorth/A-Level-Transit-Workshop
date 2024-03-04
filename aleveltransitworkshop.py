@@ -17,8 +17,9 @@ from matplotlib.animation import FuncAnimation
 st.title('A-Level Transit Method: The Transit Trail!')
 
 # adding pages
+st.set_page_config(page_title="Level One")
 st.markdown("# Level One: Uncovering The Transit Method")
-st.sidebar.markdown("# Level One")
+st.sidebar.header("Level One")
 st.write("Level One: clear, smooth terrain with 10% chance of rain!")
 
 # Define section titles
@@ -195,7 +196,7 @@ if section==2:
             st.write("Try again! Re-read the Mission Two details.")
     
     st.markdown('You have found an exoplanet!')
-    st.markdown('Congratulations, you've found an exoplanet! The transit method has been responsible for finding over 4000 exoplanets! But we're not done here! The transit method is very useful for finding many characterisitics of an exoplanet, including some that can even help find life!')
+    st.markdown('Congratulations, you have found an exoplanet! The transit method has been responsible for finding over 4000 exoplanets! But we're not done here! The transit method is very useful for finding many characterisitics of an exoplanet, including some that can even help find life!')
     
 if section==3:
     question1_1_1 = "What is the transit method used for?"
@@ -292,3 +293,5 @@ if section==3:
         elif selected_option1_2_4 == "2":
             st.write("Try again! Re-read the Mission Two details.")
     
+st.set_page_config(page_title='Level Two')
+st.markdown('# Level Two: ')

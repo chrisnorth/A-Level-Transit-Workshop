@@ -120,7 +120,7 @@ if section2==2:
         st.pyplot(lc116b)
     t = np.linspace(0, 5, 1200)  #times at which to calculate light curve (days)
 
-    k_txt = st.text_input(f"Enter a ratio of planet to star radius "))
+    k_txt = st.text_input(f"Enter a ratio of planet to star radius ")
 
     st.write("Hint: Keep your values between 0.1 and 1")
 

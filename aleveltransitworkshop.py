@@ -37,7 +37,6 @@ st.markdown("## {}".format(sectiontitle(section)))
 if section==1:
     # Add text
     st.write("The transit method is a way astronomers detect exoplanets, which are planets outside of our solar system.")
-    import streamlit as st
     # Add an image title
     #st.title('K2-18 b')
     # Add an image from local file
@@ -125,9 +124,28 @@ if section==2:
         #Convert the animation to HTML format using to_jshtml() method of the FuncAnimation object.
         #html = ani.to_html5_video()
         # Display the animation in Streamlit
-        components.html(ani.to_jshtml(), height=1000, width=1000)
+        components.html(ani.to_jshtml(), height=1000, width=3000)
         # Animation 
     progress_bar.empty() # clear elements by calling them empty
+    st.markdown("The animation above shows a planet orbiting a star!")
     st.markdown("Imagine you're standing far away and watching a distant star. Now, if a planet passes in front of that star from your perspective, you will see a tiny shadow. This is the planet blocking some of the star's light! Have a look at the plot below of a planet going around a star.")
     st.markdown("Astronomers can detect this because they see a small dip in the star's brightness. By carefully observing these dips in brightness over time, astronomers can figure out if there might be a planet orbiting that star. They can also learn about the size of the planet, how long it takes to orbit its star, and sometimes even its atmosphere!")
     st.markdown("Ready to proceed to the next level? Answer the questions below!")
+    # Define the question and options
+    question1_2_1 = "What is a transit?"
+    st.write(question1_2_1)
+    options1_2_1 = ["The movement of stars across the sky during the night", "The passage of an exoplanet in front of its parent star", "The alignment of multiple planets in a solar system", "Studying asteroids", "The change in brightness of a star caused by its rotation"]
+    st.write(options1_1_1)
+    # Display the question and options
+    selected_option = st.text_input("Type the number (0-3) corresponding to your solution:")
+    # Check the selected option
+    if selected_option == "1":
+        st.write("Correct! A transit is the passage of an exoplanet in front of its parent star. Mission One complete! Provide to your next Mission :)")
+    else:
+        # Provide a hint
+        if selected_option == "0":
+            st.write("Try again! Re-read the Mission Two details.")
+        elif selected_option == "2":
+            st.write("Try again! Re-read the Mission Two details.")
+        elif selected_option == "3":
+            st.write("Try again! Re-read the Mission Two details.")

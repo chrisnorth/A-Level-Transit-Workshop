@@ -15,7 +15,6 @@ from matplotlib.animation import FuncAnimation
 st.title('A-Level Transit Method: The Transit Trail!')
 
 # adding pages
-st.set_page_config(page_title="A-Level Transit Workshop")
 st.write("# Welcome to The Transit Trail!")
 st.sidebar.success("Select a level above.")
     
@@ -326,7 +325,6 @@ def page2():
     _lock = RendererAgg.lock
     from matplotlib.animation import FuncAnimation
 
-    st.set_page_config(page_title='Level Two')
     st.markdown('# Level Two: Transit Curve Adventure')
     st.sidebar.header("Level Two")
     st.write('Level Two: Cloudy (with no chance of meatballs), rocky terrain and with 50% chance of rain!')
@@ -399,4 +397,17 @@ def page2():
         st.write('Play with the slider below to see how the radius can impact the transit curve in real time! What do you notice? Discuss with the person next to you!')
 
         # slider
-        frequency = st.slider("Value for frequency", 1, 100, 9)
+        k = st.slider("Value for radius of planet over radius of star", 0.006, 0.8, 0.1)
+        lc5  = tm.evaluate(k=k, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+        with _lock:
+            fig_lc=plt.figure('lc')
+            lc5 = plt.plot(t, lc5, '-o')
+            plt.ylabel('Relative signal')
+            plt.xlabel('Time (days)')
+            plt.xlim(-0.1,0.1)
+            plt.ylim(0.5,1.1)
+            # Add minor ticks
+            plt.minorticks_on()
+            # Customise minor tick appearance
+            plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+            st.pyplot(lc5)

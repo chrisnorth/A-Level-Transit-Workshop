@@ -140,7 +140,7 @@ if section==2:
     selected_option = st.text_input("Type the number (0-3) corresponding to your solution:")
     # Check the selected option
     if selected_option == "1":
-        st.write("Correct! A transit is the passage of an exoplanet in front of its parent star. Mission One complete! Provide to your next Mission :)")
+        st.write("Correct! A transit is the passage of an exoplanet in front of its parent star. :)")
     else:
         # Provide a hint
         if selected_option == "0":
@@ -158,7 +158,7 @@ if section==2:
     selected_option = st.text_input("Type the number (0-3) corresponding to your solution:")
     # Check the selected option
     if selected_option == "2":
-        st.write("Correct! The transit method detects exoplanets by detecting dips in the star's brightness when an exoplanet passes in front of it. Mission One complete! Provide to your next Mission :)")
+        st.write("Correct! The transit method detects exoplanets by detecting dips in the star's brightness when an exoplanet passes in front of it. :)")
     else:
         # Provide a hint
         if selected_option == "0":
@@ -166,5 +166,23 @@ if section==2:
         elif selected_option == "1":
             st.write("Try again! Re-read the Mission Two details.")
         elif selected_option == "3":
+            st.write("Try again! Re-read the Mission Two details.")
+    # Define the question and options
+    question1_2_4 = "Which of the following is a limitation of the transit method in detecting exoplanets?"
+    st.write(question1_2_4)
+    options1_2_4 = ["It can only detect large exoplanets", "It cannot detect exoplanets that are too far from their star", "It cannot detect exoplanets with irregular orbits", "It cannot detect exoplanets that are too close to their stars"]
+    st.write(options1_2_4)
+    # Display the question and options
+    selected_option = st.text_input("Type the number (0-3) corresponding to your solution:")
+    # Check the selected option
+    if selected_option == "3":
+        st.write("Correct! A limitation of the transit method in detecting exoplanets is that it cannot detect exoplanets that are too close to their stars. :)")
+    else:
+        # Provide a hint
+        if selected_option == "0":
+            st.write("Try again! Re-read the Mission Two details.")
+        elif selected_option == "1":
+            st.write("Try again! Re-read the Mission Two details.")
+        elif selected_option == "2":
             st.write("Try again! Re-read the Mission Two details.")
     

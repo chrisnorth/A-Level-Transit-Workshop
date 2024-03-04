@@ -82,6 +82,10 @@ if section==2:
     ax2.set_xlabel('X')
     ax2.set_ylabel('Y')
     ax2.set_title('Above View')
+    # Draw line segment representing the orbital plane (edge-on view)
+    orbital_plane_edgeon, = ax1.plot([-orbit_radius, orbit_radius], [0, 0], linestyle='--', color='gray')
+    ax1.annotate('Orbital Plane', xy=(2, 0), xytext=(2, -2), arrowprops=dict(facecolor='black', arrowstyle='->'))
+
     st.markdown("Imagine you're standing far away and watching a distant star. Now, if a planet passes in front of that star from your perspective, you will see a tiny shadow. This is the planet blocking some of the star's light! Have a look at the plot below of a planet going around a star.")
     st.markdown("Astronomers can detect this because they see a small dip in the star's brightness. By carefully observing these dips in brightness over time, astronomers can figure out if there might be a planet orbiting that star. They can also learn about the size of the planet, how long it takes to orbit its star, and sometimes even its atmosphere!")
     st.markdown("Ready to proceed to the next level? Answer the questions below!")

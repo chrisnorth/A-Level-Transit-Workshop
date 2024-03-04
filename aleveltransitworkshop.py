@@ -125,7 +125,7 @@ if section==2:
         #Convert the animation to HTML format using to_jshtml() method of the FuncAnimation object.
         #html = ani.to_html5_video()
         # Display the animation in Streamlit
-        components.html(ani.uo_jshtml())
+        components.html(ani.to_jshtml())
     st.markdown("Imagine you're standing far away and watching a distant star. Now, if a planet passes in front of that star from your perspective, you will see a tiny shadow. This is the planet blocking some of the star's light! Have a look at the plot below of a planet going around a star.")
     st.markdown("Astronomers can detect this because they see a small dip in the star's brightness. By carefully observing these dips in brightness over time, astronomers can figure out if there might be a planet orbiting that star. They can also learn about the size of the planet, how long it takes to orbit its star, and sometimes even its atmosphere!")
     st.markdown("Ready to proceed to the next level? Answer the questions below!")

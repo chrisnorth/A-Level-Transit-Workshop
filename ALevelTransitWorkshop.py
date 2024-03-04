@@ -419,4 +419,16 @@ def page2():
         lc116b  = tm.evaluate(k=rp_rs116b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
         with _lock:
             fig_lc = plt.figure('lc')
-            
+            lc391b = plt.plot(t,lc391b,'-o', label='Kepler-391 b')
+            lc132b = plt.plot(t,lc132b,'-o', label='Kepler-132 b')
+            lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b')
+            lc116b = plt.plot(t,lc116b,'-o', label='Kepler-116 b')
+            plt.ylabel('Relative signal')
+            plt.xlabel('Time (days)')
+            plt.legend();
+            plt.minorticks_on();
+            plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+            st.pyplot(lc391b)
+            st.pyplot(lc132b)
+            st.pyplot(lc18b)
+            st.pyplot(lc116b)

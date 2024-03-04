@@ -11,7 +11,6 @@ from matplotlib.backends.backend_agg import RendererAgg
 _lock = RendererAgg.lock
 from matplotlib.animation import FuncAnimation
 
-st.set_page_config(page_title='Level Two')
 st.markdown('# Level Two: Transit Curve Adventure')
 st.sidebar.header("Level Two")
 st.write('Level Two: Cloudy (with no chance of meatballs), rocky terrain and with 50% chance of rain!')
@@ -84,4 +83,59 @@ if section2==2:
     st.write('Play with the slider below to see how the radius can impact the transit curve in real time! What do you notice? Discuss with the person next to you!')
 
     # slider
+    k = st.slider("Value for radius of planet over radius of star", 0.006, 0.8, 0.1)
+    lc5  = tm.evaluate(k=k, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+    with _lock:
+        fig_lc=plt.figure('lc')
+        lc5 = plt.plot(t, lc5, '-o')
+        plt.ylabel('Relative signal')
+        plt.xlabel('Time (days)')
+        plt.xlim(-0.1,0.1)
+        plt.ylim(0.5,1.1)
+        # Add minor ticks
+        plt.minorticks_on()
+        # Customise minor tick appearance
+        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+        st.pyplot(lc5)
     
+    st.write('Look at the above slider plot in a different way')
+    lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+    lc391b  = tm.evaluate(k=rp_rs391b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+    lc132b  = tm.evaluate(k=rp_rs132b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+    lc116b  = tm.evaluate(k=rp_rs116b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+    with _lock:
+        fig_lc = plt.figure('lc')
+        lc391b = plt.plot(t,lc391b,'-o', label='Kepler-391 b')
+        lc132b = plt.plot(t,lc132b,'-o', label='Kepler-132 b')
+        lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b')
+        lc116b = plt.plot(t,lc116b,'-o', label='Kepler-116 b')
+        plt.ylabel('Relative signal')
+        plt.xlabel('Time (days)')
+        plt.legend();
+        plt.minorticks_on();
+        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+        st.pyplot(lc391b)
+        st.pyplot(lc132b)
+        st.pyplot(lc18b)
+        st.pyplot(lc116b)
+    t = np.linspace(0, 5, 1200)  #times at which to calculate light curve (days)
+
+    k_txt = st.text_input(f"Enter a ratio of planet to star radius "))
+
+    st.write("Hint: Keep your values between 0.1 and 1")
+
+    # Plot the data
+    with _lock:
+        plt.figure(figsize=(8, 6))
+        lc_k  = tm.evaluate(k=k_txt, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+        lc_k = plt.plot(t,lc_k, '-o')
+
+        # Add labels and title
+        plt.ylabel('Relative signal')
+        plt.xlabel('Time (days)')
+        plt.title('Your transit light curve!')
+
+        # Show the plot
+        plt.minorticks_on();
+        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+        st.pyplot(lc_k)

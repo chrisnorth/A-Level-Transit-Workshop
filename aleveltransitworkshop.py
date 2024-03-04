@@ -38,7 +38,7 @@ if section==1:
     # Load the image from a local file
     image = open("C:\Users\elena\Pictures\Desktop background\Exoplanet_K2-18_b_(Illustration).jpg", "rb").read()
     # Display the image in Streamlit
-st.image(image, caption='The above image is an illustration of an exoplanet Kb-18 b! The red sphere is the cool dwarf star that it orbits around called K2-18. Illustration: NASA, CSA, ESA, J. Olmsted (STScI), Science: N. Madhusudhan (Cambridge University)')
+    st.image(image, caption='The above image is an illustration of an exoplanet Kb-18 b! The red sphere is the cool dwarf star that it orbits around called K2-18. Illustration: NASA, CSA, ESA, J. Olmsted (STScI), Science: N. Madhusudhan (Cambridge University)')
     # Add text
     st.write("The transit method is a way astronomers detect exoplanets, which are planets outside of our solar system.")
     import streamlit as st

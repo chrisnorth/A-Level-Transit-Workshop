@@ -18,6 +18,7 @@ st.title('A-Level Transit Method: The Transit Trail!')
 
 # adding pages
 st.set_page_config(page_title="Level One")
+st.sidebar.success("Select a level above.")
 st.markdown("# Level One: Uncovering The Transit Method")
 st.sidebar.header("Level One")
 st.write("Level One: clear, smooth terrain with 10% chance of rain!")

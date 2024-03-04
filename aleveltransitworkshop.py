@@ -9,7 +9,6 @@ import time
 from matplotlib.backends.backend_agg import RendererAgg
 _lock = RendererAgg.lock
 from matplotlib.animation import FuncAnimation
-from IPython.display import HTML
 
 # Title the app
 st.title('A-Level Transit Method: The Transit Trail!')

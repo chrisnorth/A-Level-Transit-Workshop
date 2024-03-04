@@ -79,3 +79,7 @@ if section2==1:
         plt.legend();
         plt.title('Transit Light Curve');
         st.pyplot(fig_lc18b);
+
+if section2==2:
+    st.write('Play with the slider below to see how the radius can impact the transit curve in real time! What do you notice? Discuss with the person next to you!')
+    

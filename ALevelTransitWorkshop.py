@@ -411,3 +411,12 @@ def page2():
             # Customise minor tick appearance
             plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
             st.pyplot(lc5)
+     
+        st.write('Look at the above slider plot in a different way')
+        lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+        lc391b  = tm.evaluate(k=rp_rs391b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+        lc132b  = tm.evaluate(k=rp_rs132b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+        lc116b  = tm.evaluate(k=rp_rs116b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+        with _lock:
+            fig_lc = plt.figure('lc')
+            

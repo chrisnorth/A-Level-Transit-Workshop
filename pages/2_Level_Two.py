@@ -139,3 +139,40 @@ if section2==2:
         plt.minorticks_on();
         plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
         st.pyplot(lc_k)
+    
+    st.write('From your plot, think about how you can calculate the time range of when the planet passes in front of the star.')
+
+if section2==3:
+    st.write('Different transit events can tell you how far away the planet is from the star! This is all due to perspective. For example, if you cover a light source with a shield that is right in front of the light source it will block a lot of light but if you place the shield very far from the light source it will only block some of the light. See this in action with the interactive plot below!')
+    per = st.slider("Value for period", 1.0, 50.0, 5)
+    lc  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per, a=ars18b, i=inc18b)
+    with _lock:
+        fig = plt.figure('lc')
+        lc_plt = plt.plot(t, lc, '-o')
+        plt.ylabel('Relative signal')
+        plt.xlabel('Time (days)')
+        plt.minorticks_on()
+        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+        st.pyplot(lc_plt)
+
+    st.write('Now, look at a static plot of planets with different orbital periods. Remember that period is the time taken for the exoplanet to complete one orbit around its host star!')
+    lc83c  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=10.00102551, a=ars18b, i=inc18b, e=ecc18b, w=w18b) #K2-83 c
+    lc1h  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=20, a=ars18b, i=inc18b, e=ecc18b, w=w18b) #TRAPPIST-1 h
+    lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b) #K2-18 b
+    lc1260d  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=49.8251659648395, a=ars18b, i=inc18b, e=ecc18b, w=w18b) #TOI-1260 d
+
+    with _lock:
+        fig = plt.figure('lc')
+
+        lc83c = plt.plot(t,lc83c, '-o', label='K2-83 c') #K2-83 c
+        lc1h = plt.plot(t,lc1h,'-o', label='TRAPPIST-1 h') #TRAPPIST-1 h
+        lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b') #K2-18 b
+        plt.plot(t,lc1260d,'-o', label='TOI-1260 d') #TOI-1260 d
+
+        plt.grid(True)
+        plt.ylabel('Relative signal')
+        plt.xlabel('Time (days)')
+        plt.legend();
+        plt.minorticks_on();
+        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+        plt.show();

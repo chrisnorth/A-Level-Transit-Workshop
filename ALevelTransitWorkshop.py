@@ -399,4 +399,4 @@ def page2():
         st.write('Play with the slider below to see how the radius can impact the transit curve in real time! What do you notice? Discuss with the person next to you!')
 
         # slider
-        
+        frequency = st.slider("Value for frequency", 1, 100, 9)

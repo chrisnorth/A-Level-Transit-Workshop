@@ -135,7 +135,7 @@ if section==2:
     question1_2_1 = "What is a transit?"
     st.write(question1_2_1)
     options1_2_1 = ["The movement of stars across the sky during the night", "The passage of an exoplanet in front of its parent star", "The alignment of multiple planets in a solar system", "Studying asteroids", "The change in brightness of a star caused by its rotation"]
-    st.write(options1_1_1)
+    st.write(options1_2_1)
     # Display the question and options
     selected_option = st.text_input("Type the number (0-3) corresponding to your solution:")
     # Check the selected option
@@ -149,3 +149,22 @@ if section==2:
             st.write("Try again! Re-read the Mission Two details.")
         elif selected_option == "3":
             st.write("Try again! Re-read the Mission Two details.")
+    # Define the question and options
+    question1_2_2 = "How does the transit method detect exoplanets?"
+    st.write(question1_2_2)
+    options1_2_2 = ["By measuring changes in the star's colour", "By observing fluctuations in the exoplanet's size", "By detecting dips in the star's brightness when an exoplanet passes in front of it", "By analysing the chnage in the star's temperature"]
+    st.write(options1_2_2)
+    # Display the question and options
+    selected_option = st.text_input("Type the number (0-3) corresponding to your solution:")
+    # Check the selected option
+    if selected_option == "2":
+        st.write("Correct! The transit method detects exoplanets by detecting dips in the star's brightness when an exoplanet passes in front of it. Mission One complete! Provide to your next Mission :)")
+    else:
+        # Provide a hint
+        if selected_option == "0":
+            st.write("Try again! Re-read the Mission Two details.")
+        elif selected_option == "1":
+            st.write("Try again! Re-read the Mission Two details.")
+        elif selected_option == "3":
+            st.write("Try again! Re-read the Mission Two details.")
+    

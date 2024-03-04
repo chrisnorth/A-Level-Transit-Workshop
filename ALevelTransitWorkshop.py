@@ -18,6 +18,3 @@ st.title('A-Level Transit Method: The Transit Trail!')
 st.write("# Welcome to The Transit Trail!")
 st.sidebar.success("Select a level above.")
     
-# Define function for page 2
-def page2():
-    

@@ -285,3 +285,4 @@ if section1==3:
             st.write("Try again! Re-read the Mission Two details.")
         elif selected_option1_2_4 == "2":
             st.write("Try again! Re-read the Mission Two details.")
+            

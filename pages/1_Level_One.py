@@ -11,6 +11,19 @@ from matplotlib.backends.backend_agg import RendererAgg
 _lock = RendererAgg.lock
 from matplotlib.animation import FuncAnimation
 
+#Imports
+import streamlit as st
+import streamlit.components.v1 as components
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import time
+# use the non-interactive Agg backend to be more thread safe
+#mpl.use("agg")
+from matplotlib.backends.backend_agg import RendererAgg
+_lock = RendererAgg.lock
+from matplotlib.animation import FuncAnimation
+
 st.markdown("# Level One: Uncovering The Transit Method")
 st.sidebar.header("Level One")
 st.write("Level One: clear, smooth terrain with 10% chance of rain!")
@@ -285,4 +298,3 @@ if section1==3:
             st.write("Try again! Re-read the Mission Two details.")
         elif selected_option1_2_4 == "2":
             st.write("Try again! Re-read the Mission Two details.")
-            

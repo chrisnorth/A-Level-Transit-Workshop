@@ -69,12 +69,13 @@ if section2==1:
     tm.set_data(t)
 
     lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
-    plt.figure('lc18b')
-
-    plt.plot(t,lc18b, '-o', label='K2-18 b')
-    plt.grid(True)
-    plt.ylabel('Relative signal')
-    plt.xlabel('Time (days)')
-    plt.legend();
-    plt.title('Transit Light Curve');
-    plt.show();
+    
+        with _lock:
+        fig_lc18b = plt.figure('lc18b')
+        lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b')
+        plt.grid(True)
+        plt.ylabel('Relative signal')
+        plt.xlabel('Time (days)')
+        plt.legend();
+        plt.title('Transit Light Curve');
+        st.pyplot(fig_lc18b);

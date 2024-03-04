@@ -167,12 +167,160 @@ if section2==3:
         lc83c = plt.plot(t,lc83c, '-o', label='K2-83 c') #K2-83 c
         lc1h = plt.plot(t,lc1h,'-o', label='TRAPPIST-1 h') #TRAPPIST-1 h
         lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b') #K2-18 b
-        plt.plot(t,lc1260d,'-o', label='TOI-1260 d') #TOI-1260 d
-
-        plt.grid(True)
+        lc1260 = plt.plot(t,lc1260d,'-o', label='TOI-1260 d') #TOI-1260 d
         plt.ylabel('Relative signal')
         plt.xlabel('Time (days)')
         plt.legend();
         plt.minorticks_on();
         plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
-        plt.show();
+        st.pyplot(lc83c)
+        st.pyplot(lc1h)
+        st.pyplot(lc18b)
+        st.pyplot(lc1260)
+
+    # Initialise lists to store data
+    x_values = []
+    y_values = []
+
+    p = st.text_input(f"Enter a value for the period ")
+
+    st.write('Hint: Keep your values between 1 and 50')
+
+    # Plot the data
+    with _lock:
+        fig = plt.figure(figsize=(8, 6))
+        lc_p  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=p, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+        lc_p_plt = plt.plot(t,lc_p, '-o')
+        # Add labels and title
+        plt.ylabel('Relative signal')
+        plt.xlabel('Time (days)')
+        plt.title('Your transit light curve!')
+        # Show the plot
+        plt.minorticks_on();
+        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+        st.pyplot(lc_p_plt)
+
+if section2==4:
+    st.write('Astronomers love to find patterns and if you see that a dip in brightness happens regularly then you can start to predict when the next dip will occur because then you are most likely looking at the orbit of a planet!')
+    tlong=np.linspace(0,5,10000)
+    tm.set_data(tlong)
+
+    per = st.slider('Values for the period', 1.0, 2.0, 0.01)
+
+    lc  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per, a=ars18b*0.05, i=inc18b)
+    with _lock:
+        fig = plt.figure('lc')
+        tlong_plt = plt.plot(tlong,lc, '-o')
+        plt.xlim(0, 5)
+        plt.ylim(0.997,1.001)
+        plt.ylabel('Relative signal')
+        plt.xlabel('Time (days)')
+        # Add minor ticks
+        plt.minorticks_on()
+        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+        st.pyplot(tlong_plt)
+    
+    lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=2.00, a=ars18b*0.05, i=inc18b)
+    with _lock:
+        fig = plt.figure('lc')
+        tlong_lc18b = plt.plot(tlong,lc18b, '-o')
+        plt.xlim(0, 5)
+        plt.ylim(0.9972,1.0001)
+        plt.ylabel('Relative Flux')
+        plt.xlabel('Time (days)')
+        plt.minorticks_on()
+        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+        st.pyplot(tlong_lc18b)
+    
+if section2==5:
+    question2_1_1 = "What do scientists look for to confirm the presence of an exoplanet using the transit method?"
+    st.write(question2_1_1)
+    options2_1_1=["Change in the star's colour", "Variations in the star's size", "Repeated dips in the star's brightness at regular intervals", "Fluctuations in the star's temperature"]
+    st.write(options2_1_1)
+     # Display Question 1.2.1 and options
+    selected_option2_2_1 = st.text_input("Type the number (0-3) corresponding to your solution:")
+    # Check the selected option
+    if selected_option2_2_1 == "2":
+        st.write("Correct! :)")
+    else:
+        # Provide a hint
+        if selected_option2_2_1 == "0":
+            st.write("Try again!")
+        elif selected_option2_2_1 == "1":
+            st.write("Try again!")
+        elif selected_option2_2_1 == "3":
+            st.write("Try again!")
+
+    question2_1_2 = "When does the planet pass in front of the star?"
+    options2_1_2=["Between -0.100 and -0.075 days", "Between -0.075 and 0.075 days", "Between 0.075 and 0.100 days", "None of the above"]
+    st.write(question2_1_2)
+    st.write(options2_1_2)
+     # Display Question 2.2.1 and options
+    selected_option2_2_2 = st.text_input("Type the number (0-3) corresponding to your solution:")
+    # Check the selected option
+    if selected_option2_2_2 == "1":
+        st.write("Correct! :)")
+    else:
+        # Provide a hint
+        if selected_option2_2_2 == "0":
+            st.write("Try again!")
+        elif selected_option2_2_2 == "2":
+            st.write("Try again!")
+        elif selected_option2_2_2 == "3":
+            st.write("Try again!")
+
+
+    question2_1_3 = "What happens to a star's light during a transit caused by an exoplanet?"
+    options2_1_3=["It brightens", "It remains constant", "It dims slightly", "It disappears completely"]
+    st.write(question2_1_3)
+    st.write(options2_1_3)    
+    selected_option2_2_3 = st.text_input("Type the number (0-3) corresponding to your solution:")
+    # Check the selected option
+    if selected_option2_2_3 == "1":
+        st.write("Correct!  :)")
+    else:
+        # Provide a hint
+        if selected_option2_2_3 == "0":
+            st.write("Try again!")
+        elif selected_option2_2_3 == "2":
+            st.write("Try again!")
+        elif selected_option2_2_3 == "3":
+            st.write("Try again!")
+
+
+    question2_1_4 ="Why does the brightness of a star decrease during a transit?"
+    options2_1_4=["Due to the presence of sunspots on the star's surface", "Because the exoplanet blocks a portion of the star's light as it passes in front of it", "As a result of an error in the data", "Because of fluctuations in the star's internal temperature"]
+    st.write(question2_1_4)
+    st.write(options2_1_4)
+    selected_option2_1_4 = st.text_input("Type the number (0-3) corresponding to your solution:")
+    # Check the selected option
+    if selected_option2_1_4 == "1":
+        st.write("Correct!  :)")
+    else:
+        # Provide a hint
+        if selected_option2_1_4 == "0":
+            st.write("Try again!")
+        elif selected_option2_1_4 == "2":
+            st.write("Try again!")
+        elif selected_option2_1_4 == "3":
+            st.write("Try again!")
+
+
+    question2_1_5 = "What is represented by the slopes in the transit light curve?"
+    options2_1_5=["Velocity of the exoplanet", "Change in brightness over time", "Atmospheric density of the exoplanet", "None of the above"]
+    st.write(question2_1_5)
+    st.write(options2_1_5)
+    selected_option2_1_5 = st.text_input("Type the number (0-3) corresponding to your solution:")
+    # Check the selected option
+    if selected_option2_1_5 == "1":
+        st.write("Correct!  :)")
+    else:
+        # Provide a hint
+        if selected_option2_1_5 == "0":
+            st.write("Try again!")
+        elif selected_option2_1_5 == "2":
+            st.write("Try again!")
+        elif selected_option2_1_5 == "3":
+            st.write("Try again!")
+
+    

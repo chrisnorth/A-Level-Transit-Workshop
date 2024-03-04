@@ -20,8 +20,6 @@ st.sidebar.success("Select a level above.")
     
 # Define function for page 2
 def page2():
-    st.write("This is page 2")
-    # Add content specific to page 2
     #Imports
     import streamlit as st
     import streamlit.components.v1 as components

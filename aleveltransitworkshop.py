@@ -94,7 +94,8 @@ if section==2:
     planet_edgeon = ax1.add_patch(plt.Circle((0, orbit_radius), planet_radius, color='blue'))
     star = ax2.add_patch(plt.Circle((0, 0), star_radius, color='yellow'))
     planet_above = ax2.add_patch(plt.Circle((0, orbit_radius), planet_radius, color='blue'))
-
+    ax1.annotate('Star', xy=(-1, 0), xytext=(-1, -1.5))
+    ax2.annotate('Star', xy=(0, 0), xytext=(0.5, -1.5))
     st.markdown("Imagine you're standing far away and watching a distant star. Now, if a planet passes in front of that star from your perspective, you will see a tiny shadow. This is the planet blocking some of the star's light! Have a look at the plot below of a planet going around a star.")
     st.markdown("Astronomers can detect this because they see a small dip in the star's brightness. By carefully observing these dips in brightness over time, astronomers can figure out if there might be a planet orbiting that star. They can also learn about the size of the planet, how long it takes to orbit its star, and sometimes even its atmosphere!")
     st.markdown("Ready to proceed to the next level? Answer the questions below!")

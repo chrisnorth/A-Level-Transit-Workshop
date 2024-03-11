@@ -81,6 +81,9 @@ if section2==1:
 
 if section2==2:
     st.write('Play with the slider below to see how the radius can impact the transit curve in real time! What do you notice? Discuss with the person next to you!')
+    tm = QuadraticModel() # a model that uses two limb-darkening coefficients
+    t = np.linspace(-0.1, 0.1, 1200)
+    tm.set_data(t)
 
     # slider
     k = st.slider("Value for radius of planet over radius of star", 0.006, 0.8, 0.1)

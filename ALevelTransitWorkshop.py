@@ -12,7 +12,8 @@ from matplotlib.backends.backend_agg import RendererAgg
 _lock = RendererAgg.lock
 from matplotlib.animation import FuncAnimation
 
-import pytransit_local as pytransit
+import pytransit_local as pytransitlocal
+import pytransit
 
 # Title the app
 st.title('A-Level Transit Method: The Transit Trail!')
@@ -21,4 +22,5 @@ st.write("# Welcome to The Transit Trail!")
 st.sidebar.success("Select a level above.")
 
 st.write('streamlit version',st.__version__)
-st.write('pytransit version',pytransit.__version__,pytransit.__file__)
+st.write('pytransit local version',pytransitlocal.__version__,pytransitlocal.__file__)
+st.write('pytransit local version',pytransit.__version__,pytransit.__file__)

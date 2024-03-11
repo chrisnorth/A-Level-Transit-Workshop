@@ -1,6 +1,6 @@
 streamlit==1.22.0
-matplotlib==3.7.1
-numpy==1.22
+# matplotlib==3.7.1
+# numpy==1.22
 PyTransit
 arviz==0.17
 emcee==3.1.4

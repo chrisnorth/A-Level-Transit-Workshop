@@ -12,7 +12,7 @@ from matplotlib.backends.backend_agg import RendererAgg
 _lock = RendererAgg.lock
 from matplotlib.animation import FuncAnimation
 
-import pytransit_local as pytransitlocal
+# import pytransit_local as pytransitlocal
 import pytransit
 
 # Title the app

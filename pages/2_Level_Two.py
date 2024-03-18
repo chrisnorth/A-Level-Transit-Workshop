@@ -148,7 +148,7 @@ if section2==2:
 
 if section2==3:
     st.write('Different transit events can tell you how far away the planet is from the star! This is all due to perspective. For example, if you cover a light source with a shield that is right in front of the light source it will block a lot of light but if you place the shield very far from the light source it will only block some of the light. See this in action with the interactive plot below!')
-    per = st.slider("Value for period", 1.0, 50.0, 5)
+    per = st.slider("Value for period", 1.0, 50.0, 5.)
     lc  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per, a=ars18b, i=inc18b)
     with _lock:
         fig = plt.figure('lc')

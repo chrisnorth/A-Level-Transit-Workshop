@@ -102,7 +102,7 @@ if section2==2:
     plt.minorticks_on()
     # Customise minor tick appearance
     plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
-    st.pyplot(lc5)
+    st.pyplot(fig_lc5)
     
     st.write('Look at the above slider plot in a different way')
     lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)

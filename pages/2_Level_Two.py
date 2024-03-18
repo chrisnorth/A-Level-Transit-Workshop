@@ -9,7 +9,7 @@ import time
 mpl.use("agg")
 from matplotlib.backends.backend_agg import RendererAgg
 #mpl.use('TkAgg')
-_lock = RendererAgg.lock
+#_lock = RendererAgg.lock
 from matplotlib.animation import FuncAnimation
 
 st.markdown('# Level Two: Transit Curve Adventure')

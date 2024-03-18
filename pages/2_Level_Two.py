@@ -91,39 +91,39 @@ if section2==2:
     # slider
     k = st.slider("Value for radius of planet over radius of star", 0.006, 0.8, 0.1)
     lc5  = tm.evaluate(k=k, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
-    with _lock:
-        fig_lc=plt.figure('lc')
-        lc5 = plt.plot(t, lc5, '-o')
-        plt.ylabel('Relative signal')
-        plt.xlabel('Time (days)')
-        plt.xlim(-0.1,0.1)
-        plt.ylim(0.5,1.1)
-        # Add minor ticks
-        plt.minorticks_on()
-        # Customise minor tick appearance
-        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
-        st.pyplot(lc5)
+    #with _lock:
+    fig_lc=plt.figure('lc')
+    lc5 = plt.plot(t, lc5, '-o')
+    plt.ylabel('Relative signal')
+    plt.xlabel('Time (days)')
+    plt.xlim(-0.1,0.1)
+    plt.ylim(0.5,1.1)
+    # Add minor ticks
+    plt.minorticks_on()
+    # Customise minor tick appearance
+    plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+    st.pyplot(lc5)
     
     st.write('Look at the above slider plot in a different way')
     lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
     lc391b  = tm.evaluate(k=rp_rs391b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
     lc132b  = tm.evaluate(k=rp_rs132b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
     lc116b  = tm.evaluate(k=rp_rs116b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
-    with _lock:
-        fig_lc = plt.figure('lc')
-        lc391b = plt.plot(t,lc391b,'-o', label='Kepler-391 b')
-        lc132b = plt.plot(t,lc132b,'-o', label='Kepler-132 b')
-        lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b')
-        lc116b = plt.plot(t,lc116b,'-o', label='Kepler-116 b')
-        plt.ylabel('Relative signal')
-        plt.xlabel('Time (days)')
-        plt.legend();
-        plt.minorticks_on();
-        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
-        st.pyplot(lc391b)
-        st.pyplot(lc132b)
-        st.pyplot(lc18b)
-        st.pyplot(lc116b)
+    #with _lock:
+    fig_lc = plt.figure('lc')
+    lc391b = plt.plot(t,lc391b,'-o', label='Kepler-391 b')
+    lc132b = plt.plot(t,lc132b,'-o', label='Kepler-132 b')
+    lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b')
+    lc116b = plt.plot(t,lc116b,'-o', label='Kepler-116 b')
+    plt.ylabel('Relative signal')
+    plt.xlabel('Time (days)')
+    plt.legend();
+    plt.minorticks_on();
+    plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+    st.pyplot(lc391b)
+    st.pyplot(lc132b)
+    st.pyplot(lc18b)
+    st.pyplot(lc116b)
     t = np.linspace(0, 5, 1200)  #times at which to calculate light curve (days)
 
     k_txt = st.text_input(f"Enter a ratio of planet to star radius ")
@@ -131,20 +131,20 @@ if section2==2:
     st.write("Hint: Keep your values between 0.1 and 1")
 
     # Plot the data
-    with _lock:
-        plt.figure(figsize=(8, 6))
-        lc_k  = tm.evaluate(k=k_txt, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
-        lc_k = plt.plot(t,lc_k, '-o')
+    # with _lock:
+    plt.figure(figsize=(8, 6))
+    lc_k  = tm.evaluate(k=k_txt, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+    lc_k = plt.plot(t,lc_k, '-o')
 
-        # Add labels and title
-        plt.ylabel('Relative signal')
-        plt.xlabel('Time (days)')
-        plt.title('Your transit light curve!')
+    # Add labels and title
+    plt.ylabel('Relative signal')
+    plt.xlabel('Time (days)')
+    plt.title('Your transit light curve!')
 
-        # Show the plot
-        plt.minorticks_on();
-        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
-        st.pyplot(lc_k)
+    # Show the plot
+    plt.minorticks_on();
+    plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+    st.pyplot(lc_k)
     
     st.write('From your plot, think about how you can calculate the time range of when the planet passes in front of the star.')
 
@@ -152,14 +152,14 @@ if section2==3:
     st.write('Different transit events can tell you how far away the planet is from the star! This is all due to perspective. For example, if you cover a light source with a shield that is right in front of the light source it will block a lot of light but if you place the shield very far from the light source it will only block some of the light. See this in action with the interactive plot below!')
     per = st.slider("Value for period", 1.0, 50.0, 5.)
     lc  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per, a=ars18b, i=inc18b)
-    with _lock:
-        fig = plt.figure('lc')
-        lc_plt = plt.plot(t, lc, '-o')
-        plt.ylabel('Relative signal')
-        plt.xlabel('Time (days)')
-        plt.minorticks_on()
-        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
-        st.pyplot(lc_plt)
+    # with _lock:
+    fig = plt.figure('lc')
+    lc_plt = plt.plot(t, lc, '-o')
+    plt.ylabel('Relative signal')
+    plt.xlabel('Time (days)')
+    plt.minorticks_on()
+    plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+    st.pyplot(lc_plt)
 
     st.write('Now, look at a static plot of planets with different orbital periods. Remember that period is the time taken for the exoplanet to complete one orbit around its host star!')
     lc83c  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=10.00102551, a=ars18b, i=inc18b, e=ecc18b, w=w18b) #K2-83 c
@@ -167,22 +167,22 @@ if section2==3:
     lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b) #K2-18 b
     lc1260d  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=49.8251659648395, a=ars18b, i=inc18b, e=ecc18b, w=w18b) #TOI-1260 d
 
-    with _lock:
-        fig = plt.figure('lc')
+    # with _lock:
+    fig = plt.figure('lc')
 
-        lc83c = plt.plot(t,lc83c, '-o', label='K2-83 c') #K2-83 c
-        lc1h = plt.plot(t,lc1h,'-o', label='TRAPPIST-1 h') #TRAPPIST-1 h
-        lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b') #K2-18 b
-        lc1260 = plt.plot(t,lc1260d,'-o', label='TOI-1260 d') #TOI-1260 d
-        plt.ylabel('Relative signal')
-        plt.xlabel('Time (days)')
-        plt.legend();
-        plt.minorticks_on();
-        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
-        st.pyplot(lc83c)
-        st.pyplot(lc1h)
-        st.pyplot(lc18b)
-        st.pyplot(lc1260)
+    lc83c = plt.plot(t,lc83c, '-o', label='K2-83 c') #K2-83 c
+    lc1h = plt.plot(t,lc1h,'-o', label='TRAPPIST-1 h') #TRAPPIST-1 h
+    lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b') #K2-18 b
+    lc1260 = plt.plot(t,lc1260d,'-o', label='TOI-1260 d') #TOI-1260 d
+    plt.ylabel('Relative signal')
+    plt.xlabel('Time (days)')
+    plt.legend();
+    plt.minorticks_on();
+    plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+    st.pyplot(lc83c)
+    st.pyplot(lc1h)
+    st.pyplot(lc18b)
+    st.pyplot(lc1260)
 
     # Initialise lists to store data
     x_values = []
@@ -193,18 +193,18 @@ if section2==3:
     st.write('Hint: Keep your values between 1 and 50')
 
     # Plot the data
-    with _lock:
-        fig = plt.figure(figsize=(8, 6))
-        lc_p  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=p, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
-        lc_p_plt = plt.plot(t,lc_p, '-o')
-        # Add labels and title
-        plt.ylabel('Relative signal')
-        plt.xlabel('Time (days)')
-        plt.title('Your transit light curve!')
-        # Show the plot
-        plt.minorticks_on();
-        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
-        st.pyplot(lc_p_plt)
+    # with _lock:
+    fig = plt.figure(figsize=(8, 6))
+    lc_p  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=p, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
+    lc_p_plt = plt.plot(t,lc_p, '-o')
+    # Add labels and title
+    plt.ylabel('Relative signal')
+    plt.xlabel('Time (days)')
+    plt.title('Your transit light curve!')
+    # Show the plot
+    plt.minorticks_on();
+    plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray');
+    st.pyplot(lc_p_plt)
 
 if section2==4:
     st.write('Astronomers love to find patterns and if you see that a dip in brightness happens regularly then you can start to predict when the next dip will occur because then you are most likely looking at the orbit of a planet!')
@@ -214,29 +214,29 @@ if section2==4:
     per = st.slider('Values for the period', 1.0, 2.0, 0.01)
 
     lc  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per, a=ars18b*0.05, i=inc18b)
-    with _lock:
-        fig = plt.figure('lc')
-        tlong_plt = plt.plot(tlong,lc, '-o')
-        plt.xlim(0, 5)
-        plt.ylim(0.997,1.001)
-        plt.ylabel('Relative signal')
-        plt.xlabel('Time (days)')
-        # Add minor ticks
-        plt.minorticks_on()
-        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
-        st.pyplot(tlong_plt)
+    # with _lock:
+    fig = plt.figure('lc')
+    tlong_plt = plt.plot(tlong,lc, '-o')
+    plt.xlim(0, 5)
+    plt.ylim(0.997,1.001)
+    plt.ylabel('Relative signal')
+    plt.xlabel('Time (days)')
+    # Add minor ticks
+    plt.minorticks_on()
+    plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+    st.pyplot(tlong_plt)
     
     lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=2.00, a=ars18b*0.05, i=inc18b)
-    with _lock:
-        fig = plt.figure('lc')
-        tlong_lc18b = plt.plot(tlong,lc18b, '-o')
-        plt.xlim(0, 5)
-        plt.ylim(0.9972,1.0001)
-        plt.ylabel('Relative Flux')
-        plt.xlabel('Time (days)')
-        plt.minorticks_on()
-        plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
-        st.pyplot(tlong_lc18b)
+    # with _lock:
+    fig = plt.figure('lc')
+    tlong_lc18b = plt.plot(tlong,lc18b, '-o')
+    plt.xlim(0, 5)
+    plt.ylim(0.9972,1.0001)
+    plt.ylabel('Relative Flux')
+    plt.xlabel('Time (days)')
+    plt.minorticks_on()
+    plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+    st.pyplot(tlong_lc18b)
     
 if section2==5:
     question2_1_1 = "What do scientists look for to confirm the presence of an exoplanet using the transit method?"

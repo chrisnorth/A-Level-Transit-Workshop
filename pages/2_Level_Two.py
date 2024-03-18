@@ -70,15 +70,15 @@ if section2==1:
 
     lc18b  = tm.evaluate(k=rp_rs18b, ldc=gamma18b, t0=t0_18b, p=per18b, a=ars18b, i=inc18b, e=ecc18b, w=w18b)
     
-    with _lock:
-        fig_lc18b = plt.figure('lc18b')
-        lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b')
-        plt.grid(True)
-        plt.ylabel('Relative signal')
-        plt.xlabel('Time (days)')
-        plt.legend();
-        plt.title('Transit Light Curve');
-        st.pyplot(fig_lc18b);
+    #with _lock:
+    fig_lc18b = plt.figure('lc18b')
+    lc18b = plt.plot(t,lc18b, '-o', label='K2-18 b')
+    plt.grid(True)
+    plt.ylabel('Relative signal')
+    plt.xlabel('Time (days)')
+    plt.legend();
+    plt.title('Transit Light Curve');
+    st.pyplot(fig_lc18b);
 
 if section2==2:
     st.write('Play with the slider below to see how the radius can impact the transit curve in real time! What do you notice? Discuss with the person next to you!')
